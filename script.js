@@ -6,7 +6,8 @@ const convertbtn = document.querySelector("#convertbtn");
 const result = document.querySelector("#result");
 
 const API_KEY = "";
-const apiUrl = "";
+const apiUrl =
+  "https://v6.exchangerate-api.com/v6/67e14dfee08965619585b992/latest/USD";
 
 convertbtn.addEventListener("click", () => {
   const amountNumber = amount.value;
@@ -21,6 +22,7 @@ convertbtn.addEventListener("click", () => {
     .then((response) => response.json())
     .then((data) => {
       const rate = data.rate;
+      resultTotal = amount * rate;
       result.innerHTML = `${amount} ${currency} = ${result.toFixed(2)} USD`;
     })
     .catch((error) => {
