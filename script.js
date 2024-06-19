@@ -1,18 +1,17 @@
 const { response } = require("express");
 
-const amount = document.querySelector("#number");
-const currency = document.querySelector("#currency");
+const amount = document.querySelector("#inputNumber");
+const currency = document.querySelector("#currencySelect");
 const convertbtn = document.querySelector("#convertbtn");
-const result = document.querySelector("#result");
+const result = document.querySelector("#displayResult");
 
-const API_KEY = "";
-const apiUrl =
-  "https://v6.exchangerate-api.com/v6/67e14dfee08965619585b992/latest/USD";
+const API_KEY = "fGqtg1X2CZRDxYwBsS2NOpg==e950VoZXGOML6SuO";
+const apiUrl = "https://api.api-ninjas.com/v1/exchangerate?";
 
 convertbtn.addEventListener("click", () => {
-  const amountNumber = amount.value;
-  const currencychange = currency.value;
-  const url = apiUrl + currencychange;
+  const amountTotal = amount.value;
+  const currencyTotal = currency.value;
+  const url = apiUrl + currencyTotal;
 
   fetch(url, {
     headers: {
@@ -22,11 +21,11 @@ convertbtn.addEventListener("click", () => {
     .then((response) => response.json())
     .then((data) => {
       const rate = data.rate;
-      resultTotal = amount * rate;
+      result = amount * rate;
       result.innerHTML = `${amount} ${currency} = ${result.toFixed(2)} USD`;
     })
     .catch((error) => {
-      console.error("Request failed:", error).result.innerHTML =
-        "an error occured please try again ";
+      console.error("Request failed:", error);
+      result.innerHTML = "an error occured please try again ";
     });
 });
