@@ -4,24 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Currency Converter by | ujjal</title>
+    <link rel="stylesheet" href="./style.css" />
     <script src="./script.js"></script>
   </head>
   <body>
-    <h1>Currency Exchange Converter</h1>
-    <input
-      type="number"
-      name="Enter input"
-      id="inputNumber"
-      placeholder="Enter the amount"
-    />
-    <select name="Currency" id="currencySelect">
-      <option value="EUR">EUR</option>
-      <option value="INR">INR</option>
-      <option value="CAD">CAD</option>
-      <option value="EUR">EUR</option>
-      <option value="GBP">GBP</option>
-    </select>
-    <button id="convertbtn">Exchange</button>
-    <div id="displayResult"></div>
+    <div class="container">
+      <h1>Currency Exchange Converter</h1>
+      <input
+        type="number"
+        name="Enter input"
+        id="inputNumber"
+        placeholder="Enter the amount"
+      />
+      <select name="Currency" id="currencySelect">
+        <option value="EUR">EUR</option>
+        <option value="INR">INR</option>
+        <option value="CAD">CAD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+      </select>
+      <button id="convertbtn">Exchange</button>
+      <div id="displayResult"></div>
+    </div>
   </body>
 </html>
